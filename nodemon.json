@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "assets/*",
+    "dist/*",
+    "*.jsx"
+  ],
+  "ext": "js json jsx",
+  "events": {
+    "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"Nodemon\"'"
+  }
+}

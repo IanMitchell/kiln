@@ -1,0 +1,11 @@
+// Sass Works!
+$color: #080;
+
+div {
+  color: $color;
+}
+
+span {
+  // PostCSS will autoprefix this before Sass is compiled
+  display: flex;
+}
