@@ -4,6 +4,13 @@ This is yet another JavaScript boilerplate. I was having trouble finding one tha
 
 I hope to flesh this out a little more in the future, but we'll see.
 
+## Usage
+
+```
+$ npm install
+$ npm start
+```
+
 ## Components
 
 1. Babel 6
