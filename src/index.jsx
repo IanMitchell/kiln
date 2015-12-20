@@ -9,3 +9,10 @@ ReactDOM.render(
   <Router routes={ routes } history={ createBrowserHistory() } />,
   document.getElementById('root')
 );
+
+const socket = io();
+
+socket.on('news', data => {
+  console.log(data);
+  socket.emit('comment', { hello: 'server' });
+});

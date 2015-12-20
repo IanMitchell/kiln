@@ -5,6 +5,7 @@ import routes from './src/routes';
 import express from 'express';
 import webpack from 'webpack';
 import config from './webpack.config';
+import Server from 'socket.io';
 
 const app = express();
 const compiler = webpack(config);
@@ -43,11 +44,21 @@ app.get('*', (request, response) => {
 });
 
 // Create Server
-app.listen(3000, 'localhost', error => {
+const server = app.listen(3000, 'localhost', error => {
   if (error) {
     console.log(error);
     return;
   }
 
   console.log('Listening at http://localhost:3000');
+});
+
+const io = Server.listen(server);
+
+io.on('connection', socket => {
+  console.log('a user connected');
+  socket.emit('news', { hello: 'world' });
+  socket.on('comment', data => {
+    console.log(data);
+  });
 });

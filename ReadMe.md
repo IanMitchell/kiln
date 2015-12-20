@@ -21,3 +21,4 @@ $ npm start
 6. Webpack
 8. PostCSS (works alongside / before Sass)
 11. Nodemon
+12. Socket.IO
